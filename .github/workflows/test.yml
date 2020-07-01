@@ -17,14 +17,14 @@ jobs:
     name: Test on Node 12
 
     steps:
-      - uses: actions/checkout
+      - uses: actions/checkout@master
 
       - name: Use Node 12
-        uses: actions/setup-node
+        uses: actions/setup-node@master
         with:
           node-version: 12.x
 
-      - uses: actions/cache@v1
+      - uses: actions/cache@master
         with:
           path: ~/.cache/yarn
           key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
