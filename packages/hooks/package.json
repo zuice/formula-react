@@ -1,0 +1,26 @@
+{
+  "name": "@formula-react/hooks",
+  "version": "0.1.0",
+  "description": "Better, cleaner forms with React - hooks.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --env=jsdom",
+    "test:watch": "test -- --watchAll"
+  },
+  "devDependencies": {
+    "@testing-library/react-hooks": "^3.3.0",
+    "@types/jest": "^26.0.3",
+    "jest": "^26.1.0",
+    "react-test-renderer": "^16.13.1",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.5"
+  },
+  "repository": "https://github.com/zuice/formula-react.git",
+  "author": "zuice <jeff.allen127@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "react": "^16.13.1"
+  }
+}

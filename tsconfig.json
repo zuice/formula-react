@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "pretty": true,
+    "target": "esnext",
+    "jsx": "react",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@formula-react/hooks": ["packages/hooks/src"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "@formula-react/jest.config.js"]
+}

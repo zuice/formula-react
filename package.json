@@ -1,0 +1,15 @@
+{
+  "name": "formula-react",
+  "repository": "https://github.com/zuice/formula-react",
+  "scripts": {
+    "test": "lerna run test --"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "license": "MIT",
+  "private": true
+}
