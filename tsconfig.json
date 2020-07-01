@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "pretty": true,
-    "target": "esnext",
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["DOM", "ESNext"],
     "jsx": "react",
     "strict": true,
     "noImplicitAny": true,
@@ -16,8 +18,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@formula-react/hooks": ["packages/hooks/src"]
     }

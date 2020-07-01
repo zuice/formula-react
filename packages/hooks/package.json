@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --env=jsdom",
-    "test:watch": "test -- --watchAll"
+    "test:watch": "test -- --watchAll",
+    "prepublish": "yarn build"
   },
   "devDependencies": {
     "@testing-library/react-hooks": "^3.3.0",

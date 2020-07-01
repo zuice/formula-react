@@ -1,4 +1,4 @@
-name: Build & Test
+name: Test
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Build & Test
+      - name: Test
         run: |
           yarn install --frozen-lockfile
           yarn test --coverage

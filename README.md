@@ -1,5 +1,5 @@
-![Test](https://github.com/zuice/formula-react/workflows/Build%20&%20Test/badge.svg)
+![Test](https://github.com/zuice/formula-react/workflows/Test/badge.svg)
 
-### formula-react
+## formula-react
 
 Better, cleaner way to build forms with React.

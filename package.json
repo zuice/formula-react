@@ -2,7 +2,8 @@
   "name": "formula-react",
   "repository": "https://github.com/zuice/formula-react",
   "scripts": {
-    "test": "lerna run test --"
+    "test": "lerna run test --",
+    "prepublish": "lerna run prepublish"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
