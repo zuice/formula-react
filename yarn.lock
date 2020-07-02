@@ -226,7 +226,15 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
 
-"@babel/runtime@^7.5.4":
+"@babel/runtime-corejs3@^7.10.2":
+  version "7.10.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.10.4.tgz#f29fc1990307c4c57b10dbd6ce667b27159d9e0d"
+  integrity sha512-BFlgP2SoLO9HJX9WBwN67gHWMBhDX/eDz64Jajd6mR/UAUzqrNMm99d4qHnVaKscAElZoFiPv+JpR/Siud5lXw==
+  dependencies:
+    core-js-pure "^3.0.0"
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.5.4", "@babel/runtime@^7.9.2":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.4.tgz#a6724f1a6b8d2f6ea5236dbfe58c7d7ea9c5eb99"
   integrity sha512-UpTN5yUJr9b4EX2CnGNWIvER7Ab83ibv0pcvvHc4UOdrBI5jb8bj+32cCwPX6xu0mt2daFNjYhoi+X7beH0RSw==
@@ -1366,6 +1374,32 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@testing-library/dom@^7.17.1":
+  version "7.19.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.19.0.tgz#35d33bdac587000c4bd19cc73f3c58a05a0f29af"
+  integrity sha512-t4sIYKGJ8vCi+fEP3f+lnvomvhofHK8xXxhrapiRS8tnP6la9woE+d9hjivviRkwvNFAOAYaN7REKnQf5XCGxg==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
+    aria-query "^4.2.2"
+    dom-accessibility-api "^0.4.5"
+    pretty-format "^25.5.0"
+
+"@testing-library/jest-dom@^5.11.0":
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.0.tgz#1439f08dc85ce7c6d3bbad0ee5d53b2206f55768"
+  integrity sha512-mhaCySy7dZlyfcxcYy+0jLllODHEiHkVdmwQ00wD0HrWiSx0fSVHz/0WmdlRkvhfSOuqsRsBUreXOtBvruWGQA==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    "@types/testing-library__jest-dom" "^5.9.1"
+    aria-query "^4.2.2"
+    chalk "^3.0.0"
+    css "^2.2.4"
+    css.escape "^1.5.1"
+    jest-diff "^25.1.0"
+    jest-matcher-utils "^25.1.0"
+    lodash "^4.17.15"
+    redent "^3.0.0"
+
 "@testing-library/react-hooks@^3.3.0":
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@testing-library/react-hooks/-/react-hooks-3.3.0.tgz#dc217bfce8e7c34a99c811d73d23feef957b7c1d"
@@ -1373,6 +1407,14 @@
   dependencies:
     "@babel/runtime" "^7.5.4"
     "@types/testing-library__react-hooks" "^3.0.0"
+
+"@testing-library/react@^10.4.3":
+  version "10.4.3"
+  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-10.4.3.tgz#c6f356688cffc51f6b35385583d664bb11a161f4"
+  integrity sha512-A/ydYXcwAcfY7vkPrfUkUTf9HQLL3/GtixTefcu3OyGQtAYQ7XBQj1S9FWbLEhfWa0BLwFwTBFS3Ao1O0tbMJg==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
+    "@testing-library/dom" "^7.17.1"
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.9"
@@ -1447,7 +1489,7 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^26.0.3":
+"@types/jest@*", "@types/jest@^26.0.3":
   version "26.0.3"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.3.tgz#79534e0e94857171c0edc596db0ebe7cb7863251"
   integrity sha512-v89ga1clpVL/Y1+YI0eIu1VMW+KU7Xl8PhylVtDKVWaSUHBHYPLXMQGBdrpHewaKoTvlXkksbYqPgz8b4cmRZg==
@@ -1504,6 +1546,13 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
+
+"@types/testing-library__jest-dom@^5.9.1":
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/@types/testing-library__jest-dom/-/testing-library__jest-dom-5.9.1.tgz#aba5ee062b7880f69c212ef769389f30752806e5"
+  integrity sha512-yYn5EKHO3MPEMSOrcAb1dLWY+68CG29LiXKsWmmpVHqoP5+ZRiAVLyUHvPNrO2dABDdUGZvavMsaGpWNjM6N2g==
+  dependencies:
+    "@types/jest" "*"
 
 "@types/testing-library__react-hooks@^3.0.0":
   version "3.2.0"
@@ -1693,6 +1742,14 @@ argparse@^1.0.7:
   integrity sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   dependencies:
     sprintf-js "~1.0.2"
+
+aria-query@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/aria-query/-/aria-query-4.2.2.tgz#0d2ca6c9aceb56b8977e9fed6aed7e15bbd2f83b"
+  integrity sha512-o/HelwhuKpTj/frsOsbNLNgnNGVIFsVP/SW2BSF14gVl7kAfMOJ6/8wUAUvG1R1NHKrfG+2sHZTu0yauT1qBrA==
+  dependencies:
+    "@babel/runtime" "^7.10.2"
+    "@babel/runtime-corejs3" "^7.10.2"
 
 arr-diff@^4.0.0:
   version "4.0.0"
@@ -2410,6 +2467,11 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
+core-js-pure@^3.0.0:
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.6.5.tgz#c79e75f5e38dbc85a662d91eea52b8256d53b813"
+  integrity sha512-lacdXOimsiD0QyNf9BC/mxivNJ/ybBGJXQFKzRekp1WTHoVUWsUHEn+2T8GJAzzIhyOuXA+gOxCVN3l+5PLPUA==
+
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -2444,6 +2506,21 @@ cross-spawn@^7.0.0:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
+
+css.escape@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
+  integrity sha1-QuJ9T6BK4y+TGktNQZH6nN3ul8s=
+
+css@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/css/-/css-2.2.4.tgz#c646755c73971f2bba6a601e2cf2fd71b1298929"
+  integrity sha512-oUnjmWpy0niI3x/mPL8dVEI1l7MnG3+HHyRPHf+YFSbK+svOhXpmSOcDURUh2aOCgl2grzrOPt1nHLuCVFULLw==
+  dependencies:
+    inherits "^2.0.3"
+    source-map "^0.6.1"
+    source-map-resolve "^0.5.2"
+    urix "^0.1.0"
 
 cssom@^0.4.4:
   version "0.4.4"
@@ -2663,6 +2740,11 @@ dir-glob@^2.2.2:
   integrity sha512-f9LBi5QWzIW3I6e//uxZoLBlUt9kcp66qo0sSCxL6YZKc75R1c4MFCoe/LaZiBGmgujvQdxc5Bn3QhfyvK5Hsw==
   dependencies:
     path-type "^3.0.0"
+
+dom-accessibility-api@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.4.5.tgz#d9c1cefa89f509d8cf132ab5d250004d755e76e3"
+  integrity sha512-HcPDilI95nKztbVikaN2vzwvmv0sE8Y2ZJFODy/m15n7mGXLeOKGiys9qWVbFbh+aq/KYj2lqMLybBOkYAEXqg==
 
 domexception@^2.0.1:
   version "2.0.1"
@@ -3960,7 +4042,7 @@ jest-config@^26.1.0:
     micromatch "^4.0.2"
     pretty-format "^26.1.0"
 
-jest-diff@^25.2.1:
+jest-diff@^25.1.0, jest-diff@^25.2.1, jest-diff@^25.5.0:
   version "25.5.0"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-25.5.0.tgz#1dd26ed64f96667c068cef026b677dfa01afcfa9"
   integrity sha512-z1kygetuPiREYdNIumRpAHY6RXiGmp70YHptjdaxTWGmA085W3iCnXNx0DhflK3vwrKmrRWyY1wUpkPMVxMK7A==
@@ -4081,6 +4163,16 @@ jest-leak-detector@^26.1.0:
   dependencies:
     jest-get-type "^26.0.0"
     pretty-format "^26.1.0"
+
+jest-matcher-utils@^25.1.0:
+  version "25.5.0"
+  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-25.5.0.tgz#fbc98a12d730e5d2453d7f1ed4a4d948e34b7867"
+  integrity sha512-VWI269+9JS5cpndnpCwm7dy7JtGQT30UHfrnM3mXl22gHGt/b7NkjBqXfbhZ8V4B7ANUsjK18PlSBmG0YH7gjw==
+  dependencies:
+    chalk "^3.0.0"
+    jest-diff "^25.5.0"
+    jest-get-type "^25.2.6"
+    pretty-format "^25.5.0"
 
 jest-matcher-utils@^26.1.0:
   version "26.1.0"
@@ -5686,6 +5778,16 @@ quick-lru@^4.0.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-4.0.1.tgz#5b8878f113a58217848c6482026c73e1ba57727f"
   integrity sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==
 
+react-dom@^16.13.1:
+  version "16.13.1"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
+  integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.19.1"
+
 react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -6239,7 +6341,7 @@ sort-keys@^2.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
-source-map-resolve@^0.5.0:
+source-map-resolve@^0.5.0, source-map-resolve@^0.5.2:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/source-map-resolve/-/source-map-resolve-0.5.3.tgz#190866bece7553e1f8f267a2ee82c606b5509a1a"
   integrity sha512-Htz+RnsXWk5+P2slx5Jh3Q66vhQj1Cllm0zvnaY98+NFx+Dv2CF/f5O/t8x+KaNdrdIAsruNzoh/KpialbqAnw==

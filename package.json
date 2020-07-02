@@ -3,6 +3,7 @@
   "repository": "https://github.com/zuice/formula-react",
   "scripts": {
     "test": "lerna run test --",
+    "test:watch": "yarn test --watchAll --coverage",
     "prepublish": "lerna run prepublish",
     "publish": "lerna publish"
   },
