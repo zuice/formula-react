@@ -1,22 +1,9 @@
-import React from 'react';
-import { renderHook } from '@testing-library/react-hooks';
-import { render, fireEvent } from '@testing-library/react';
+import React, { ChangeEvent, FocusEvent } from 'react';
+import { renderHook, act } from '@testing-library/react-hooks';
+import userEvent from '@testing-library/user-event';
+import { render } from '@testing-library/react';
 
 import { useFormula } from './useFormula';
-
-// implementation:
-// const Form = () => {
-//   const { handleSubmit, props } = useFormula({ email: '', password: '' });
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <label htmlFor="email">Email</label>
-//       <input {...props.email} placeholder="Enter your email" />
-//       <label htmlFor="password">Password</label>
-//       <input {...props.password} placeholder="Enter your password" />
-//     </form>
-//   );
-// };
 
 test('returns an api to use for a form', () => {
   const { result } = renderHook(() => useFormula({ email: '', password: '' }));
@@ -27,18 +14,18 @@ test('returns an api to use for a form', () => {
   expect(current).toMatchObject({
     props: {
       email: {
+        onChange,
+        onBlur,
         id: 'email',
         name: 'email',
         value: '',
-        onChange,
-        onBlur,
       },
       password: {
+        onChange,
+        onBlur,
         id: 'password',
         name: 'password',
         value: '',
-        onChange,
-        onBlur,
       },
     },
     values: { email: '', password: '' },
@@ -55,10 +42,21 @@ test('triggers onChange in the hook', async () => {
   const { getByTestId, findByTestId } = render(<Component />);
   const emailInput = getByTestId('email');
 
-  fireEvent.change(emailInput, { target: { value: 'me@me.com' } });
-  fireEvent.blur(emailInput);
+  userEvent.type(emailInput, 'me@me.com');
 
   const emailInputUpdated = (await findByTestId('email')) as HTMLInputElement;
 
   expect(emailInputUpdated.value).toBe('me@me.com');
+});
+
+test('updates touched values after input is edited', () => {
+  const { result } = renderHook(() => useFormula({ email: '' }));
+  const event = { target: { value: 'me@me.com' } };
+
+  act(() => {
+    result.current.props.email.onChange(event as ChangeEvent<HTMLInputElement>);
+    result.current.props.email.onBlur({} as FocusEvent<HTMLInputElement>);
+  });
+
+  expect(result.current.touched.email).toBe(true);
 });
