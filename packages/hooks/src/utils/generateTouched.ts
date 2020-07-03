@@ -1,9 +1,8 @@
-import { FieldValues } from '../types/FieldValues';
 import { FieldTouched } from '../types/FieldTouched';
 
-export const generateTouched = (values: FieldValues) => {
+export function generateTouched<Values>(values: Values) {
   const touchedArr = Object.keys(values).map(key => [key, false]);
   const touched = Object.fromEntries(touchedArr);
 
-  return touched as FieldTouched;
-};
+  return touched as FieldTouched<Values>;
+}

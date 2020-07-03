@@ -3,11 +3,11 @@ import { ChangeEvent, FocusEvent } from 'react';
 import { FieldValues } from '../types/FieldValues';
 import { SchemaProps } from '../types/SchemaProps';
 
-export const generateProps = (
+export function generateProps<Values>(
   values: FieldValues,
   handleChange: (key: string, value: string) => void,
   handleBlur: (key: string, event: FocusEvent<HTMLInputElement>) => void,
-): SchemaProps => {
+): SchemaProps<Values> {
   const propsArr = Object.keys(values).map(key => [
     [key],
     {
@@ -19,7 +19,7 @@ export const generateProps = (
       onBlur: (event: FocusEvent<HTMLInputElement>) => handleBlur(key, event),
     },
   ]);
-  const props = Object.fromEntries(propsArr) as SchemaProps;
+  const props = Object.fromEntries(propsArr) as SchemaProps<Values>;
 
   return props;
-};
+}

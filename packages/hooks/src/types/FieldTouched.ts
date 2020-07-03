@@ -1,3 +1,3 @@
-export interface FieldTouched {
-  [key: string]: boolean;
-}
+export type FieldTouched<Values> = {
+  [K in keyof Values]: boolean;
+};

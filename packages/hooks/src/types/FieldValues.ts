@@ -1,3 +1,3 @@
-export interface FieldValues {
+export type FieldValues = {
   [key: string]: string | number;
-}
+};

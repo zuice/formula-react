@@ -8,18 +8,20 @@ import { generateProps } from './utils/generateProps';
 
 export function useFormula<Values extends FieldValues = FieldValues>(
   initialValues: Values,
-): Schema {
-  const [values, setValues] = useState<FieldValues>(initialValues);
-  const [touched, setTouched] = useState<FieldTouched>(generateTouched(values));
+): Schema<Values> {
+  const [values, setValues] = useState<Values>(initialValues);
+  const [touched, setTouched] = useState<FieldTouched<Values>>(
+    generateTouched<Values>(values),
+  );
 
   const handleChange = (key: string, value: string) => {
     setValues({ ...values, [key]: value });
   };
   const handleBlur = (key: string, _: FocusEvent<HTMLInputElement>) => {
-    setTouched({ [key]: true });
+    setTouched({ [key]: true } as FieldTouched<Values>);
   };
 
-  const props = generateProps(values, handleChange, handleBlur);
+  const props = generateProps<Values>(values, handleChange, handleBlur);
 
   return { values, touched, props };
 }

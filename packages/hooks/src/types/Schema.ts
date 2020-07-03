@@ -1,9 +1,8 @@
 import { SchemaProps } from './SchemaProps';
 import { FieldTouched } from './FieldTouched';
-import { FieldValues } from './FieldValues';
 
-export interface Schema {
-  props: SchemaProps;
-  values: FieldValues;
-  touched: FieldTouched;
+export interface Schema<Values> {
+  props: SchemaProps<Values>;
+  values: Values;
+  touched: FieldTouched<Values>;
 }

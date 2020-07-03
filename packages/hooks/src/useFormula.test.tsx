@@ -60,3 +60,9 @@ test('updates touched values after input is edited', () => {
 
   expect(result.current.touched.email).toBe(true);
 });
+
+// test('should validate each field on change', () => {
+//   const handleValidate = jest.fn();
+//   const { result } = renderHook(() => useFormula({ email: '' }));
+
+// });
