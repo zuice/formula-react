@@ -1,6 +1,6 @@
 import { ChangeEvent, FocusEvent } from 'react';
 
-export type SchemaProps<Values> = {
+export type Props<Values> = {
   [K in keyof Values]: {
     id: K;
     name: K;
