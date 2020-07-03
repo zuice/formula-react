@@ -26,6 +26,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-push": "yarn pretty && yarn build && yarn test",
       "pre-commit": "yarn pretty && yarn build && yarn test"
     }
   },
