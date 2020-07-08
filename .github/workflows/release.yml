@@ -19,6 +19,15 @@ jobs:
         env:
           CI: true
       - run: yarn run prepublish
+      - name: Authenticate with Registry
+        run: |
+          yarn logout
+          echo "@formula-react:registry=http://registry.npmjs.org/" > .npmrc
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish to npm
         run: yarn run publish from-git --yes
         env:
